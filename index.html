@@ -1,0 +1,171 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>jquery.purupuru.js demo</title>
+  <meta name="description" content="jQuery.purupuru.js">
+  <meta name="author" content="Takeharu.Oshida">
+  <meta name="email" content="georgeosddev@email.com">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <style type="text/css">
+    body {
+      margin:40px;
+      font-family: Helvetica;
+      overflow-x:hidden;
+      -webkit-text-size-adjust: 100%;
+    }
+    .subtitle{
+      font-size:75%;
+      margin-top:-20px;
+    }
+    #usage pre {
+      width:500px;
+    }
+    .clear {
+      clear:both;
+      margin: 10px 0;
+      height:10px;
+    }
+    .code {
+      background-color: whiteSmoke;
+      margin-left: 150px;
+      width:500px;
+    }
+  </style>
+  <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  <body>
+  <a id="githubribbon" href="https://github.com/georgeosddev/jquery.purupuru.js" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;z-index: 1040" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+    <div class="header-container">
+      <header class="wrapper clearfix">
+        <h1 class="title">jquery.purupuru.js</h1>
+        <p class="subtitle"><b>add purupuru animation easily.</b></p>
+        <p>This plugin have been tested and approved for use only in the webkit-browser.<br>
+           If there is a bug, enjoy hacking.
+        </p>
+      </header>
+    </div>
+    <div class="main-container">
+      <div id="usage">
+        <p>Usage</p>
+          <pre class="prettyprint">
+  $(element).purupuru();</pre>
+        <p>Options</p>
+        <ul>
+          <li>direction: Integer(0:horizontal,1:vertical,2:multi) : default 0</li>
+          <li>infinite: Boolean : default false</li>
+          <li>animationDelay: Integer (millisec) : default 0</li>
+          <li>animationDuration: Integer (millisec) : default 250</li>
+          <li>purupuruBuffer: Integer (px) : default 10</li>
+        </ul>
+      </div>
+      <div id="demo">
+        <p>Demo</p>
+        <div style="display:inline;">
+          <div id="purupuruBox0" style="color:white;background-color:red;height:100px;width:100px;text-align:center;float:left;">
+            <p>click me!</p>
+          </div>
+          <div class="code">
+            <pre class="prettyprint">
+  $("#purupuruBox0").on("click",function(){
+    $(this).purupuru();
+  });</pre>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div style="display:inline;">
+          <div id="purupuruBox1" style="color:white;background-color:blue;height:100px;width:100px;text-align:center;float:left;">
+            <p>click me!</p>
+          </div>
+          <div class="code">
+            <pre class="prettyprint">
+  $("#purupuruBox1").on("click",function(){
+    $(this).purupuru({direction:1});
+  });</pre>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div style="display:inline;">
+          <div id="purupuruBox2" style="color:white;background-color:green;height:100px;width:100px;text-align:center;float:left;">
+            <p>click me!</p>
+          </div>
+          <div class="code">
+            <pre class="prettyprint">
+  $("#purupuruBox2").on("click",function(){
+    $(this).purupuru({direction:2});
+  });</pre>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div style="display:inline;">
+          <div id="purupuruBox3" style="color:white;background-color:black;height:100px;width:100px;text-align:center;float:left;">
+            <p>click me!</p>
+          </div>
+          <div class="code">
+            <pre class="prettyprint">
+  $("#purupuruBox3").on("click",function(){
+    $(this).purupuru({
+      animationDelay:1000
+      animationDuration:1000
+      purupuruBuffer:20
+    });
+  });</pre>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div style="display:inline;">
+          <div id="purupuruBox4" style="color:white;background-color:purple;height:100px;width:100px;text-align:center;float:left;">
+          </div>
+          <div class="code">
+            <pre class="prettyprint">
+  $("#purupuruBox4").purupuru({infinite:true});</pre>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="footer-container">
+      <footer class="wrapper clearfix">
+        <p>
+          Source code can be found on <a href="https://github.com/georgeOsdDev/jquery.purupuru.js" target="_blank">Github</a>, licensed under <a href="http://opensource.org/licenses/mit-license.php" target="_blank" title="MIT License">MIT</a>.<br>
+          Copyright © <a href="http://about.me/takeharu.oshida" target="_blank" title="about me">Takeharu.Oshida</a>.
+        </p>
+      </footer>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+    <script src="dest/jquery.purupuru.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){
+        var evName = "click";
+        if ("ontouchend" in window) evName = "touchend";
+        $("#purupuruBox0").on(evName,function(){
+          $(this).purupuru();
+        });
+        $("#purupuruBox1").on(evName,function(){
+          $(this).purupuru({direction:1});
+        });
+        $("#purupuruBox2").on(evName,function(){
+          $(this).purupuru({direction:2});
+        });
+      $("#purupuruBox3").on("click",function(){
+        $(this).purupuru({
+          animationDelay:1000,
+          animationDuration:1000,
+          purupuruBuffer:20
+        });
+      });
+        $("#purupuruBox4").purupuru({infinite:true});
+      });
+    </script>
+  </body>
+  </html>
